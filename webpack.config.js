@@ -1,97 +1,50 @@
 const Webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const appPath = path.join(__dirname, './app');
-const distPath = path.join(__dirname, './dist');
+
+const src = path.resolve(__dirname, './src');
+const dist = path.resolve(__dirname, './dist');
 
 
 module.exports = {
-
-    entry: {
-        app: appPath + '/core',
-        vendor: [
-            'react',
-            'react-dom'
-        ]
-    },
-
-    output: {
-        path: distPath,
-        filename: 'bundle.app.js'
-    },
-
-    module: {
-        rules: [{
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
-            },
-            {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('css-loader!sass-loader'),
-                exclude: /node_modules/
-            }
-        ]
-    },
-
-    devServer: {
-        historyApiFallback: true
-    },
-
-    plugins: [
-
-        new ExtractTextPlugin('style.css'),
-
-        new HtmlWebpackPlugin({
-            template: 'index.template.ejs',
-            inject: true,
-            hash: true
-        }),
-
-        new Webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            filename: 'bundle.vendor.js',
-            minChunks: Infinity
-        })
-
-    ],
-
-    resolve: {
-        modules: ['node_modules']
-    }
-
+  entry: {
+    src: `${src}/index.jsx`,
+    vendor: [
+      'react',
+      'react-dom'
+    ]
+  },
+  output: {
+    path: dist,
+    filename: 'bundle.js'
+  },
+  devServer: {
+    port: 3002,
+    open: true
+  },
+  devtool: 'inline-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.jsx$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.template.ejs',
+      filename: 'index.html'
+    }),
+    new Webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'bundle.vendor.js',
+      minChunks: Infinity
+    })
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    modules: ['node_modules', 'src']
+  }
 };
-
-
-if (process.env.NODE_ENV === 'production') {
-
-    module.exports.plugins = (module.exports.plugins || []).concat([
-
-        new CleanWebpackPlugin([distPath], {
-            root: path.join(__dirname, './'),
-            verbose: true,
-            dry: false
-        }),
-
-        new Webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"production"'
-            }
-        }),
-
-        new Webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            compress: {
-                warnings: false
-            }
-        }),
-
-        new Webpack.LoaderOptionsPlugin({
-            minimize: true
-        })
-
-    ]);
-
-}
