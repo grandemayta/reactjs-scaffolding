@@ -8,19 +8,21 @@ const dist = path.resolve(__dirname, './dist');
 
 module.exports = {
   entry: {
-    src: `${src}/index.jsx`,
+    src: `${src}/bootstrap.jsx`,
     vendor: [
       'react',
-      'react-dom'
+      'react-dom',
+      'react-router-dom'
     ]
   },
   output: {
     path: dist,
-    filename: 'bundle.js'
+    filename: 'bundle.app.js'
   },
   devServer: {
     port: 3002,
-    open: true
+    open: true,
+    historyApiFallback: true
   },
   devtool: 'inline-source-map',
   module: {
@@ -39,12 +41,16 @@ module.exports = {
     }),
     new Webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: 'bundle.vendor.js',
-      minChunks: Infinity
+      minChunks: Infinity,
+      filename: 'bundle.vendor.js'
     })
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
-    modules: ['node_modules', 'src']
+    modules: ['node_modules', 'src'],
+    alias: {
+      core: path.resolve(__dirname, `${src}/core`),
+      features: path.resolve(__dirname, `${src}/features`)
+    }
   }
 };

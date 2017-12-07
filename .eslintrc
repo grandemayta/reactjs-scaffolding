@@ -1,11 +1,17 @@
 {
-    "extends": "airbnb",
+    "extends": [
+      "airbnb"
+    ],
     "rules": {
       "comma-dangle": 0,
-      "arrow-parens": ["error", "as-needed"]
+      "arrow-parens": ["error", "as-needed"],
+      "jsx-a11y/anchor-is-valid": 1
     },
     "env": {
       "browser": true,
       "node": true
+    },
+    "settings": {
+      "import/resolver": "webpack"
     }
 }
