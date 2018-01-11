@@ -3,5 +3,5 @@ import Routes from 'core/routes';
 
 
 export default function App() {
-  return <Routes />;
+  return (<Routes />);
 }

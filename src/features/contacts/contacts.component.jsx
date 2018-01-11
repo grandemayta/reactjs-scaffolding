@@ -17,7 +17,7 @@ export default class Contacts extends React.Component {
       <div>
         <h1>{this.state.title}</h1>
         <p>Tel: {this.state.mobilePhone}</p>
-        <Link to={this.state.link}>Torna alla Home</Link>
+        <Link to={this.state.link}>Go back to home</Link>
       </div>
     );
   }

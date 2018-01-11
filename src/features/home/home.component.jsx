@@ -7,15 +7,17 @@ export default class Home extends React.Component {
     super();
     this.state = {
       title: 'Home',
-      link: '/contacts'
+      url: '/contacts'
     };
   }
 
   render() {
     return (
       <div>
-        <h1>{this.state.title}</h1>
-        <Link to={this.state.link}>Contacts</Link>
+        <form>
+          <h1>{this.state.title}</h1>
+          <Link to={this.state.url}>Go to contacts</Link>
+        </form>
       </div>
     );
   }

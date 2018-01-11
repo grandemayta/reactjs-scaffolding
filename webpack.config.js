@@ -46,7 +46,7 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', 'css'],
     modules: ['node_modules', 'src'],
     alias: {
       core: path.resolve(__dirname, `${src}/core`),
