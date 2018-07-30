@@ -12,6 +12,7 @@
     "prod": "NODE_ENV=PROD webpack --config webpack.prod.js"
   },
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2"

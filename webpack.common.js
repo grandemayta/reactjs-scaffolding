@@ -11,7 +11,8 @@ module.exports = {
     vendor: [
       'react',
       'react-dom',
-      'react-router-dom'
+      'react-router-dom',
+      'prop-types'
     ]
   },
   module: {

@@ -1,6 +1,5 @@
-import React, {  Component } from 'react';
+import React, { Component } from 'react';
 import Link from 'react-router-dom/Link';
-
 
 class Home extends Component {
   constructor() {

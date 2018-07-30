@@ -1,18 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import features from '../features';
+import PropTypes from 'prop-types';
 
+const Routes = props => (
+  <Router>
+    <div>
+      {props.routes.map(route => {
+        if (route.exact) return <Route exact key={route.name} path={route.path} component={route.component} />;
+        return <Route key={route.name} path={route.path} component={route.component} />;
+      })}
+    </div>
+  </Router>
+);
 
-const routes = [];
+Routes.propTypes = {
+  routes: PropTypes.array.isRequired
+};
 
-features.forEach(feature => routes.push(feature));
-
-export default function Routes() {
-  return (
-    <Router>
-      <div>
-        {routes.map(route => <Route key={route.name} path={route.path} component={route.component} />)}
-      </div>
-    </Router>
-  );
-}
+export default Routes;
