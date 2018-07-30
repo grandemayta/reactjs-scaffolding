@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {  Component } from 'react';
 import Link from 'react-router-dom/Link';
 
 
-export default class Home extends React.Component {
+class Home extends Component {
   constructor() {
     super();
     this.state = {
@@ -22,3 +22,5 @@ export default class Home extends React.Component {
     );
   }
 }
+
+export default Home;

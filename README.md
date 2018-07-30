@@ -1,3 +1,3 @@
-# reactjs-boilerplate
+# ReactJS Scaffolding
 
-ReactJS Boilerplate with Babel, Eslint, Yarn and Webpack
+All that you need to work with ReactJS without reinvent the wheel.

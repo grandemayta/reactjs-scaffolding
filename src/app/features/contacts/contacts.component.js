@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Link from 'react-router-dom/Link';
 
-
-export default class Contacts extends React.Component {
+class Contacts extends Component {
   constructor() {
     super();
     this.state = {
@@ -22,3 +21,5 @@ export default class Contacts extends React.Component {
     );
   }
 }
+
+export default Contacts;

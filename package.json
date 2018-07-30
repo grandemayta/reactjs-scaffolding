@@ -1,11 +1,15 @@
 {
-  "name": "reactjs-boilerplate",
+  "name": "reactjs-scaffolding",
   "version": "1.0.0",
-  "author": "Gabriel Mayta",
+  "author": {
+    "email": "grandemayta@gmail.com",
+    "name": "Gabriel Mayta",
+    "url": "https://github.com/grandemayta"
+  },
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.dev.js",
-    "prod": "cross-env NODE_ENV=PROD webpack --config webpack.prod.js"
+    "prod": "NODE_ENV=PROD webpack --config webpack.prod.js"
   },
   "dependencies": {
     "react": "^16.0.0",
@@ -19,7 +23,6 @@
     "babel-preset-react": "^6.24.1",
     "bundle-loader": "^0.5.5",
     "clean-webpack-plugin": "^0.1.17",
-    "cross-env": "^5.1.3",
     "eslint": "^4.12.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-import-resolver-webpack": "^0.8.3",
