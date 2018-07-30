@@ -37,6 +37,9 @@
     "webpack-dev-server": "^2.9.5",
     "webpack-merge": "^4.1.1"
   },
-  "repository": "git+https://github.com/grandemayta/reactjs-first-app.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grandemayta/scaffolding-reactjs.git"
+  },
   "license": "MIT"
 }
