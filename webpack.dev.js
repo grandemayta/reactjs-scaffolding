@@ -1,3 +1,4 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const Webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
@@ -18,6 +19,7 @@ module.exports = merge(common, {
     historyApiFallback: true
   },
   plugins: [
+    new ExtractTextPlugin('bundle.style.css'),
     new Webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: Infinity,

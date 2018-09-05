@@ -1,5 +1,6 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 const src = path.resolve(__dirname, './src');
@@ -20,6 +21,16 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('css-loader!sass-loader'),
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(jpg|png|gif|eot|woff|woff2|ttf|svg)$/,
+        loader: 'file-loader',
         exclude: /node_modules/
       }
     ]

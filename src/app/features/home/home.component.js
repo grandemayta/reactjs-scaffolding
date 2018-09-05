@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import Link from 'react-router-dom/Link';
+import { Button, Header } from '../../components';
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
-      title: 'Home',
       url: '/contacts'
     };
   }
@@ -13,10 +12,11 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <form>
-          <h1>{this.state.title}</h1>
-          <Link to={this.state.url}>Go to contacts</Link>
-        </form>
+        <Header title="ReactJs Scaffolding" />
+        <p>Start to code!</p>
+        <Button to={this.state.url}>
+          Contacts
+        </Button>
       </div>
     );
   }
