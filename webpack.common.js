@@ -1,6 +1,6 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 const src = path.resolve(__dirname, './src');
@@ -9,12 +9,12 @@ const dist = path.resolve(__dirname, './dist');
 module.exports = {
   entry: {
     src: `${src}/app/index.js`,
-    vendor: [
+    /*     vendor: [
       'react',
       'react-dom',
       'react-router-dom',
       'prop-types'
-    ]
+    ] */
   },
   module: {
     rules: [
@@ -25,7 +25,11 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css-loader!sass-loader'),
+        loader: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
         exclude: /node_modules/
       },
       {
