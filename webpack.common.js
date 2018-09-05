@@ -7,15 +7,7 @@ const src = path.resolve(__dirname, './src');
 const dist = path.resolve(__dirname, './dist');
 
 module.exports = {
-  entry: {
-    src: `${src}/app/index.js`,
-    /*     vendor: [
-      'react',
-      'react-dom',
-      'react-router-dom',
-      'prop-types'
-    ] */
-  },
+  entry: `${src}/app/index.js`,
   module: {
     rules: [
       {
