@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
-import Link from 'react-router-dom/Link';
+import { Button, Header } from '../../components';
 
 class Contacts extends Component {
   constructor() {
     super();
     this.state = {
-      title: 'Contacts',
-      link: '/',
-      mobilePhone: '+39 3349499303'
+      link: '/'
     };
   }
 
   render() {
     return (
       <div>
-        <h1>{this.state.title}</h1>
-        <p>Tel: {this.state.mobilePhone}</p>
-        <Link to={this.state.link}>Go back to home</Link>
+        <Header title="Contacts" />
+        <div style={{ textAlign: 'center' }}>
+          <div className="divisor" />
+          <h2>Gabriel Mayta</h2>
+          <div className="divisor" />
+          <Button to={this.state.link}>
+            Contacts
+          </Button>
+        </div>
       </div>
     );
   }

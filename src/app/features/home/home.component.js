@@ -13,10 +13,14 @@ class Home extends Component {
     return (
       <div>
         <Header title="ReactJs Scaffolding" />
-        <p>Start to code!</p>
-        <Button to={this.state.url}>
-          Contacts
-        </Button>
+        <div style={{ textAlign: 'center' }}>
+          <div className="divisor" />
+          <p>Start to code!</p>
+          <div className="divisor" />
+          <Button to={this.state.url}>
+            Contacts
+          </Button>
+        </div>
       </div>
     );
   }

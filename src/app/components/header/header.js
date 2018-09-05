@@ -4,7 +4,7 @@ import './header.scss';
 
 const Header = props => (
   <header>
-    {props.title}
+    <span>{props.title}</span>
   </header>
 );
 

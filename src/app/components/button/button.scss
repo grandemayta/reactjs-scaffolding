@@ -1,6 +1,10 @@
-button {
+.button {
+    display: inline-block;
     padding: 16px 0;
     min-width: 160px;
+    text-align: center;
+    text-decoration: none;
+    color: #4257b2;
     background: #d0d0d0;
     border-radius: 3px;
 }
