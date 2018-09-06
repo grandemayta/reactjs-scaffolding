@@ -8,18 +8,6 @@ const dist = path.resolve(__dirname, './dist');
 
 module.exports = merge(common, {
   mode: 'production',
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          chunks: 'all',
-          priority: 1,
-          name: 'vendor'
-        }
-      }
-    }
-  },
   output: {
     path: dist,
     filename: '[name].min.js'

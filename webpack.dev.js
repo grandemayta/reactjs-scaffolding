@@ -7,22 +7,11 @@ const dist = path.resolve(__dirname, './dist');
 
 module.exports = merge(common, {
   mode: 'development',
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          chunks: 'all',
-          priority: 1,
-          name: 'vendor'
-        }
-      }
-    }
-  },
   output: {
     path: dist,
     filename: '[name].js'
   },
+  devtool: 'cheap-module-eval-source-map',
   devServer: {
     contentBase: dist,
     port: 3002,

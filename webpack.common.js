@@ -7,7 +7,22 @@ const src = path.resolve(__dirname, './src');
 const dist = path.resolve(__dirname, './dist');
 
 module.exports = {
-  entry: `${src}/app/index.js`,
+  entry: {
+    vendor: ['prop-types', 'react', 'react-dom', 'react-router-dom'],
+    app: `${src}/app/core/app.js`
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: 'initial',
+          name: 'vendor',
+          test: 'vendor',
+          enforce: true
+        }
+      }
+    }
+  },
   module: {
     rules: [
       {
