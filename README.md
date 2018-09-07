@@ -8,7 +8,6 @@ All that you need to work with ReactJS without reinvent the wheel.
 
 ```sh
 $ npm install
-
 $ npm start
 ```
 
@@ -39,6 +38,6 @@ $ npm run prod
 - [ ] Setup Unit Testing
 - [ ] Setup E2E Testing
 
-Keep calm and code!
+####Keep calm and code!
 <br>
 [![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
