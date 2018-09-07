@@ -2,7 +2,7 @@
 [![NPM version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=1.0.0)](http://badge.fury.io/js/badge-list)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 
-All that you need to work with ReactJS without reinvent the wheel.
+All that you need to work with ReactJS without reinvent the wheel. To navigate between pages I added react-router-dom.
 
 ## Launch the application
 
@@ -16,6 +16,14 @@ $ npm start
 ```sh
 $ npm run prod
 ```
+
+## Browser support
+
+- [x] Chrome
+- [x] Firefox
+- [x] Safari
+- [x] Edge
+- [x] IE11
 
 ## Tech Stack
 
